@@ -9,3 +9,14 @@ public class NpowerM {
         return number*exponent(number, power - 1);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
