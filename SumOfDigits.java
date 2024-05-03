@@ -19,3 +19,12 @@ public class SumOfDigits {
         return lastDigit + sumOfDigits(dividedNumber);
     }
 }
+
+
+
+
+
+
+
+
+
