@@ -1,22 +1,21 @@
 public class StringIsPalindrome {
     public static void main(String[] args) {
-        System.out.println(isPalindrome(""));
-        System.out.println(isPalindrome("H"));
-        System.out.println(isPalindrome("aba"));
-        System.out.println(isPalindrome("google"));
-        System.out.println(isPalindrome("abba"));
-        System.out.println(isPalindrome("loooooooooool"));
+        System.out.println(isPalindrome("", 0));
+        System.out.println(isPalindrome("H", 0));
+        System.out.println(isPalindrome("aba", 0));
+        System.out.println(isPalindrome("google", 0));
+        System.out.println(isPalindrome("abba", 0));
+        System.out.println(isPalindrome("loooooooooool", 0));
 
     }
 
-    public static boolean isPalindrome(String givenString) {
-        int leng = givenString.length();
+    public static boolean isPalindrome(String givenString, int beginIndex) {
+        int leng = givenString.length()-beginIndex;
 
         if (leng == 0 || leng == 1) return true;
-        if (givenString.charAt(0) != givenString.charAt(leng-1)) return false;
+        if (givenString.charAt(beginIndex) != givenString.charAt(leng-1)) return false;
 
-        String ss = givenString.substring(1,leng-1);
-        return isPalindrome(ss);
+        return isPalindrome(givenString, beginIndex+1);
     }
 }
 
