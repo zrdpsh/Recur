@@ -13,14 +13,30 @@ public class OnlyEvenIndices {
 
     }
 
-    public static void onlyEvenIndices(int[] givenArray, int index) {
-        if (givenArray.length == index) return;
+        public static void onlyEvenIndices(int[] givenArray, int index) {
+        if (givenArray.length >= index) return;
 
-        int givenNumber = givenArray[index];
-        if (index % 2 == 0) System.out.print(givenNumber + " ");
+        System.out.print(givenArray[index] + " ");
 
-        onlyEvenIndices(givenArray, index+1);
+        onlyEvenIndices(givenArray, index+2);
     }
+
+
+    
+        public static boolean onlyEvenIndices2(int[] givenArray, int index)
+        {
+            int printedNumber = 0;
+            String numberToString = "";
+
+            boolean a = (index < givenArray.length) && (printedNumber = givenArray[index]) == givenArray[index];
+
+            boolean b = (index < givenArray.length) && (numberToString = "" + printedNumber).equals("" + printedNumber);
+            System.out.print(numberToString + " ");
+
+            boolean c = (index < givenArray.length) && onlyEvenIndices2(givenArray, index+2);
+
+            return a;
+        }
 
 }
 
