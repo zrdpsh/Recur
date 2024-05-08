@@ -1,18 +1,21 @@
 public class SecondLargest {
     public static void main(String[] args) {
 
-        System.out.println(secondLargest(new int[]{1, 2, 3, 4, 5}, 0, 0, 0));
-        System.out.println(secondLargest(new int[]{2, 2, 2, 2, 5}, 0, 0, 0));
-        System.out.println(secondLargest(new int[]{2, 2, 2, 5, 5}, 0, 0, 0));
-        System.out.println(secondLargest(new int[]{}, 0, 0, 0));
-        System.out.println(secondLargest(new int[]{1}, 0, 0, 0));
-        System.out.println(secondLargest(new int[]{1, 2}, 0, 0, 0));
-        System.out.println(secondLargest(new int[]{1, -2, 299}, 0, 0, 0));
+        System.out.println(secondLargest(new int[]{}));
+        System.out.println(secondLargest(new int[]{1}));
+        System.out.println(secondLargest(new int[]{1, 2}));
+        System.out.println(secondLargest(new int[]{1, -2, 299}));
+        System.out.println(secondLargest(new int[]{1, 2, 3, 4, 5}));
+        System.out.println(secondLargest(new int[]{2, 2, 2, 2, 5}));
+        System.out.println(secondLargest(new int[]{2, 2, 2, 5, 5}));
+
     }
 
-  
+    public static int secondLargest(int[] givenArray) {
+        return recurOverArray(givenArray, 0, 0, 0);
+    }
 
-    public static int secondLargest(int[] givenArray, int index, int a, int b) {
+    private static int recurOverArray(int[] givenArray, int index, int a, int b) {
 
         if (givenArray.length == 0) return 0;
         if (givenArray.length == 1) return 0;
@@ -21,12 +24,14 @@ public class SecondLargest {
         int largest = a;
         int previousLargest = largest;
         int smaller = b;
-        int givenElement = givenArray[index];
+        int firstGiven = givenArray[index];
 
-        largest = givenElement >= largest ? givenElement : largest;
+        largest = firstGiven >= largest ? firstGiven : largest;
         smaller = (previousLargest > smaller && previousLargest <= largest) ? previousLargest : smaller;
 
-        return secondLargest(givenArray, index+1, largest, smaller);
+
+        return recurOverArray(givenArray, index+1, largest, smaller);
+
     }
 }
 
