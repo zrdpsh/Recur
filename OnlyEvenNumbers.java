@@ -10,7 +10,6 @@ public class OnlyEvenNumbers {
         System.out.println();
         onlyEvenNumbers(new int[]{},0);
         System.out.println();
-
     }
 
     public static void onlyEvenNumbers(int[] givenArray, int index) {
