@@ -13,9 +13,6 @@ public class SecondLargest {
         System.out.println(secondLargest(new int[]{-1, -2, -299}));
         System.out.println(secondLargest(new int[]{-2, -1, -299}));
         System.out.println(secondLargest(new int[]{-3, -1, -299, -501, -10000000, -2}));
-
-
-
     }
 
     public static int secondLargest(int[] givenArray) {
