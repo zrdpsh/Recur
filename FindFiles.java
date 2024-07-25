@@ -8,6 +8,7 @@ public class FindFiles {
         ArrayList<String> fileNames = findFiles(".");
         for(String s: fileNames) System.out.println(s);
     }
+    
 
     public static ArrayList<String> findFiles(String givenFolder) {
         ArrayList<String> result = new ArrayList<>();
